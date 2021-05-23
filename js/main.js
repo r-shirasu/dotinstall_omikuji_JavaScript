@@ -1,22 +1,20 @@
-'use strict';
+"use strict";
 
-{
-    const button = document.getElementById('btn');
+const button = document.getElementById("btn");
 
-    btn.addEventListener('click', () => {
-        // const results = ['大吉', '小吉', '凶'];
-        // const results = ['大吉', '大吉', '大吉', '凶'];
-        // btn.textContent = results[Math.floor(Math.random() * results.length)];
-        const n = Math.random();
-        if (n < 0.05) {
-            btn.textContent = '大吉';　// 5%
-            
-        } else if (n < 0.2) {
-            btn.textContent = '中吉'; // 15% 
-        }　else {
-            btn.textContent = '凶';  // 残り80%
-        }
+// クリック時のアクション
+button.addEventListener("click", () => {
+  // 数の定義
+  // 関数は、 0 以上 1 未満 (0 は含むが、 1 は含まない) の範囲
+  const n = Math.random();
+  if (n < 0.05) {
+    button.innerText = "大吉";
+  } else if (n < 0.2) {
+    button.innerText = "小吉";
+  } else {
+    button.innerText = "凶";
+  }
+});
 
-    });
-}
-
+// textContent は、 <script> と <style> 要素を含む、すべての要素の内容を取得。
+// 一方、 innerText は「人間が読める」要素のみを示します。
